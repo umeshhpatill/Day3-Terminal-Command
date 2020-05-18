@@ -1,0 +1,72 @@
+admin@admin-PC MINGW64 ~/TerminalCommands/linux-content (master)
+
+$ cat data.csv | grep -i captain
+2  GARY         CAPTAIN         155966  245131      137811   538909   538909
+3  ALBERT       CAPTAIN         212739  106088      16452    335279   335279
+12 PATRICIA     CAPTAIN         99722   87082       110804   297608   297608
+
+
+
+$ cat data.csv | awk '{print$3 " " $4}'
+JobTitle BasePay
+GM 167411
+CAPTAIN 155966
+CAPTAIN 212739
+MECHANIC 77916
+DEPUTYCHIEF 134401
+ASSTDEPUTY 118602
+BATTALIONCHIEF 92492
+DEPUTYDIRECTOR 256576
+CHIEF 285262
+CAPTAIN 99722
+EXECUTIVE 294580
+
+
+
+$ cat data.csv | grep -i captain |awk '{print $2 " " $4}'
+GARY 155966
+ALBERT 212739
+PATRICIA 99722
+
+
+
+$ cat data.csv | grep -i captain |awk '{sum+=$4} END {print sum}'
+468427
+
+
+$ cat data.csv | grep -i captain |awk '{sum+=$4} END {print sum/NR}'
+156142
+
+
+$ cat data.csv | grep -i captain |awk '{print $2 " " $7}'
+GARY 538909
+ALBERT 335279
+PATRICIA 297608
+
+
+$ cat data.csv | grep -i captain |awk '{print $7}'
+538909
+335279
+297608
+
+$ cat data.csv | grep -i captain |awk '{print$3 " " $4}'
+CAPTAIN 155966
+CAPTAIN 212739
+CAPTAIN 99722
+
+
+$ cat data.csv | awk '{print$2 " " $7}'
+EmployeeName TotalPay
+NATHANIEL 567595
+GARY 538909
+ALBERT 335279
+CHRISTOPHER 332343
+PATRICK 326373
+DAVID 316285
+ALSON 315981
+DAVID 307899
+JOANNE 302377
+PATRICIA 297608
+EDWARD 294580
+
+
